@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "3e42b925-cb85-4f0b-a32d-f887e79b4e13",
+		"name": "API AVD4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"matricula\": \"123\",\r\n    \"email\": \"teste@teste.com\",\r\n    \"endereco\": \"teste\",\r\n    \"numero\": \"numero\",\r\n    \"bairro\": \"bairro\",\r\n    \"cidade\": \"cidade\",\r\n    \"estado\": \"sp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/aluno/salvar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"aluno",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"teste\",\r\n    \"matricula\": \"123\",\r\n    \"email\": \"teste@teste.com\",\r\n    \"endereco\": \"teste\",\r\n    \"numero\": \"numero\",\r\n    \"bairro\": \"bairro\",\r\n    \"cidade\": \"cidade\",\r\n    \"estado\": \"rj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/aluno/atualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"aluno",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/aluno/excluir/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"aluno",
+								"excluir",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/aluno/obter/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"aluno",
+								"obter",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/aluno/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"aluno",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Curso",
+			"item": [
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"ADS\",\r\n  \"descricao\": \"Tech\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/curso/salvar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"curso",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nome\": \"ADS\",\r\n  \"descricao\": \"Analise e desenvolvimento de sistema\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/curso/atualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"curso",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/curso/excluir/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"curso",
+								"excluir",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/curso/obter/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"curso",
+								"obter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/curso/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"curso",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f8fed273-abe1-4e52-b01a-ed366fe73724",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a816cba-fb3b-4e94-b853-dc197b51dbdb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Disciplina",
+			"item": [
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"teste 42\",\r\n  \"cargaHoraria\": 0,\r\n  \"descricao\": \"string\",\r\n  \"idCurso\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/disciplina/salvar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"disciplina",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nome\": \"nome alterado\",\r\n  \"cargaHoraria\": 20,\r\n  \"descricao\": \"alteracao\",\r\n  \"idCurso\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/disciplina/atualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"disciplina",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/disciplina/excluir/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"disciplina",
+								"excluir",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/disciplina/obter/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"disciplina",
+								"obter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/disciplina/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"disciplina",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "17dcf569-c2de-473f-a7c1-3f9559bdfe91",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0db4e032-8e08-4eb7-96e8-dbca8a0e00f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Inscricao",
+			"item": [
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataInicio\": \"2020-11-15T23:10:33.374Z\",\r\n  \"dataConclusao\": \"2021-11-15T23:10:33.374Z\",\r\n  \"status\": \"andamento\",\r\n  \"idAluno\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/inscricao/salvar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"inscricao",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"dataInicio\": \"2020-11-15T23:10:33.374Z\",\r\n  \"dataConclusao\": \"2022-11-15T23:10:33.374Z\",\r\n  \"status\": \"pausada\",\r\n  \"idAluno\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44364/api/v1/inscricao/atualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"inscricao",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/inscricao/excluir/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"inscricao",
+								"excluir",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/inscricao/obter/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"inscricao",
+								"obter",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44364/api/v1/inscricao/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44364",
+							"path": [
+								"api",
+								"v1",
+								"inscricao",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "12854c91-6751-4b50-b917-34b8e9eded2f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9abced36-1774-4a89-90cf-c0425ec6c422",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
