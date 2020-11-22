@@ -85,21 +85,6 @@ http://nelovicente-001-site1.btempurl.com/
 - Filezilla para subir o site em produtção via FTP
 https://filezilla-project.org/download.php?type=client
 
-
-- Informações de acesso da Maquina:
-Endereço da aplicação: http://avd4.brazilsouth.cloudapp.azure.com/
-IP: 191.235.79.140
-Usuário: avd4
-Senha: UO!g*pOq3xqf
-
-
-- Informações de acesso do banco de dados:
-Servidor: sql-avd4.database.windows.net
-Usuário: avd4
-Senha: UO!g*pOq3xqf
-Nome do banco: avd4
-
-
 Hospedagem: Azure Microsoft
 https://portal.azure.com/
 
