@@ -1,0 +1,57 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model List<Inscricao>
+@{
+    ViewData["Title"] = "Lista de inscrição";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Lista de inscrição</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+        <table id="tabelainscricao" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Status</th>
+                    <th>Data de início</th>
+                    <th>Data de conclusão</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <a href="/admin-inscricao/atualizar/@item.Id" class="btn btn-primary btn-sm mt-2">Editar</a>
+                            <a href="/admin-inscricao/excluir/@item.Id" class="btn btn-danger btn-sm mt-2">Excluir</a>
+                            <a href="/admin-inscricao/obter/@item.Id" class="btn btn-info btn-sm mt-2">Detalhe</a>
+                        </td>
+                        <td>@item.Status</td>
+                        <td>@item.DataInicio.ToString("dd/MM/yyyy")</td>
+                        <td>@item.DataConclusao?.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Ações</th>
+                    <th>Status</th>
+                    <th>Data de início</th>
+                    <th>Data de conclusão</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tabelainscricao').DataTable();
+        });
+    </script>
+}

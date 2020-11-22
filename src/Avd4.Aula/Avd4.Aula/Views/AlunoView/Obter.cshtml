@@ -1,0 +1,56 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Aluno
+@{
+    ViewData["Title"] = "Detalhe do aluno";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Informações do aluno</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="">Nome</label>
+                    @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Matricula</label>
+                    @Html.TextBoxFor(x => x.Matricula, new { @class = "form-control", id = "Matricula", @readonly = "readonly" })
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="">E-mail</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "Email", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Endereço</label>
+                    @Html.TextBoxFor(x => x.Endereco, new { @class = "form-control", id = "Endereco", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Número</label>
+                    @Html.TextBoxFor(x => x.Numero, new { @class = "form-control", id = "Numero", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Bairro</label>
+                    @Html.TextBoxFor(x => x.Bairro, new { @class = "form-control", id = "Bairro", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Cidade</label>
+                    @Html.TextBoxFor(x => x.Cidade, new { @class = "form-control", id = "Cidade", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Estado</label>
+                    @Html.TextBoxFor(x => x.Estado, new { @class = "form-control", id = "Estado", @readonly = "readonly"})
+                </div>
+            </div>
+            <a href="/admin-aluno/listar" class="btn btn-warning">Voltar</a>
+        </form>
+    </div>
+</div>
+

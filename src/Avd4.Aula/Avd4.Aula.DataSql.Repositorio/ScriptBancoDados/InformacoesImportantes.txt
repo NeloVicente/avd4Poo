@@ -1,0 +1,4 @@
+﻿
+-- Executar o script do banco de dados em seu servidor de banco de dados
+
+-- Depois alterar a string de conexão no arquivo BaseRepositorio, para a nova conexão do seu banco de dados

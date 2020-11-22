@@ -1,0 +1,110 @@
+Material de estudo para desenvolvimento do projeto 
+- Padrão de projeto DDD
+https://www.eduardopires.net.br/2016/08/ddd-nao-e-arquitetura-em-camadas/
+
+Criado a estrutura de pastas do projeto, para melhor entendimento e facilitar o desenvolvimento
+
+Devido a deficiencia com o uso do Oracle, acabei tendo mais facilidade com o SQL Server, por ser um banco mais comum, encontrei mais materiais e 
+por este motivo, preparei a aplicação para uso de dois bancos de dados, sendo que o banco efetivo, esta sendo o SQL Server.
+
+Projetos:
+- Domain - Minhas enntidades/espelhos das tabelas
+- Repositorio - Projeto que faz o acesso a dados (ao banco de dados)
+- API - Disponivel na internet para que qualquer device ou solução consiga utilizar meu serviço exposto
+
+- Postman - Ferramenta para testar a API
+https://www.postman.com/downloads/
+
+HTTP POST/PUT/DELETE/GET
+POST - Salvar dados
+PUT - Atualizar dados
+DELETE - Excluir dados
+GET - Listar ou obter dados
+
+https://pt.wikipedia.org/wiki/Depura%C3%A7%C3%A3o#:~:text=Depura%C3%A7%C3%A3o%20(em%20ingl%C3%AAs%3A%20debugging%2C,que%20produzem%20um%20resultado%20inesperado.
+
+DEBUG - Depuração é o processo de encontrar e reduzir defeitos num aplicativo de software ou mesmo em hardware. 
+Erros de software incluem aqueles que previnem o programa de ser executado e aqueles que produzem um resultado inesperado.
+F10 - Seguir o debug, passo a passo
+F11 - seguir debug, no detalhe de cada metodo até o detalhe do metodo seguinte
+F12 - Me leva direto a classe/objeto
+
+Atalhos do Visual Studio
+http://www.macoratti.net/13/02/net_10at.htm
+https://docs.microsoft.com/pt-br/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019
+https://docs.microsoft.com/pt-br/visualstudio/ide/productivity-shortcuts?view=vs-2019
+
+
+- Codigos de erros
+https://www.restapitutorial.com/httpstatuscodes.html
+
+- Estudo sobre a implementação do Crud:
+https://hackernoon.com/asp-net-core-learn-crud-operations-in-ado-net-from-zero-to-hero-a0109ed2f8a4
+https://docs.microsoft.com/pt-br/dotnet/api/system.data.sqlclient.sqlcommand.parameters?view=dotnet-plat-ext-5.0
+https://docs.microsoft.com/pt-br/dotnet/framework/data/adonet/sql/table-valued-parameters
+
+- Criando EDMX
+http://www.macoratti.net/17/04/aspcore_mvcef1.htm
+
+- Swagger - documento da API
+https://www.c-sharpcorner.com/article/asp-net-core-3-1-web-api-and-swagger/
+https://renatogroffe.medium.com/asp-net-core-3-0-swagger-novidades-e-exemplos-c6a837fc91cd
+
+Utilizei a documentação do swagger para visualizar os metodos e suas propriedades de forma fácil
+Utilizei o postman, para criar os metodos e deixar os testes prontos
+
+- Exception em SQL
+https://stackoverflow.com/questions/16670985/i-am-unable-to-use-throw-sql-server-2008-r2
+
+- Testes Unitários
+https://medium.com/@gersonluareis13/testes-unit%C3%A1rios-com-c-net-core-d59bed9419df
+https://stackoverflow.com/questions/31873778/xunit-test-fact-multiple-times
+https://www.treinaweb.com.br/blog/testes-unitarios-no-c-com-o-xunit/
+
+- Layout do admin - Bootstrap
+https://getbootstrap.com/docs/4.5/components/alerts/
+
+
+- Tabela para listar os dados - Datatable
+https://datatables.net/examples/styling/bootstrap4
+
+- Estudo sobre httpContextAccessor
+https://stackoverflow.com/questions/52927463/access-httpcontextaccessor-from-startup-cs-in-net-core-webapi
+http://www.macoratti.net/17/08/aspncore_httpctxt1.htm
+
+
+- Remoção das views do admin, da documentação do swaggwe
+https://github.com/domaindrivendev/Swashbuckle.WebApi/issues/153
+
+- Hospedagem .NET Gratis por 30 dias
+https://www.smarterasp.net/
+
+- dominio de produção
+http://nelovicente-001-site1.btempurl.com/
+
+- Filezilla para subir o site em produtção via FTP
+https://filezilla-project.org/download.php?type=client
+
+
+- Informações de acesso da Maquina:
+Endereço da aplicação: http://avd4.brazilsouth.cloudapp.azure.com/
+IP: 191.235.79.140
+Usuário: avd4
+Senha: UO!g*pOq3xqf
+
+
+- Informações de acesso do banco de dados:
+Servidor: sql-avd4.database.windows.net
+Usuário: avd4
+Senha: UO!g*pOq3xqf
+Nome do banco: avd4
+
+
+Hospedagem: Azure Microsoft
+https://portal.azure.com/
+
+- IMPORTANTE: 
+Cancelar a conta até o dia 20/12/2020
+- Link para cancelar a conta no azure
+- Gerenciamento de custo + cobrança | Visão geral
+https://portal.azure.com/#blade/Microsoft_Azure_GTM/ModernBillingMenuBlade/Overview

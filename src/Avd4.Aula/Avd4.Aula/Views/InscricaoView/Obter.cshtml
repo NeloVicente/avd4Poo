@@ -1,0 +1,37 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Inscricao
+@{
+    ViewData["Title"] = "Informações da inscrição";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Informações da inscrição</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+
+        <form>
+            <div class="form-row">
+                @Html.HiddenFor(x => x.Id, new { id = "Id" })
+                @Html.HiddenFor(x => x.IdAluno, new { id = "IdAluno" })
+
+                <div class="form-group col-md-4">
+                    <label for="">Nome</label>
+                    @Html.TextBoxFor(x => x.Status, new { @class = "form-control", id = "Status", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Data de início</label>
+                    @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", id = "DataInicio", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Data de conclusão</label>
+                    @Html.TextBoxFor(x => x.DataConclusao, new { @class = "form-control", id = "DataConclusao", @readonly = "readonly" })
+                </div>
+            </div>
+            <a href="/admin-inscricao/listar" class="btn btn-warning">Voltar</a>
+        </form>
+    </div>
+</div>

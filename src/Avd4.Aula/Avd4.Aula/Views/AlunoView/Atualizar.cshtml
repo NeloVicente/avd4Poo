@@ -1,0 +1,67 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Aluno
+@{
+    ViewData["Title"] = "Atualizar dados do aluno";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Atualizar dados do aluno</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+
+        <form method="post" action="/admin-aluno/atualizar">
+            <div class="form-row">
+                @Html.HiddenFor(x => x.Id, new { id = "Id" })
+
+                <div class="form-group col-md-6">
+                    <label for="">Nome</label>
+                    @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Matricula</label>
+                    @Html.TextBoxFor(x => x.Matricula, new { @class = "form-control", id = "Matricula" })
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="">E-mail</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "Email" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Endereço</label>
+                    @Html.TextBoxFor(x => x.Endereco, new { @class = "form-control", id = "Endereco" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Número</label>
+                    @Html.TextBoxFor(x => x.Numero, new { @class = "form-control", id = "Numero" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Bairro</label>
+                    @Html.TextBoxFor(x => x.Bairro, new { @class = "form-control", id = "Bairro" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Cidade</label>
+                    @Html.TextBoxFor(x => x.Cidade, new { @class = "form-control", id = "Cidade" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Estado</label>
+                    @Html.TextBoxFor(x => x.Estado, new { @class = "form-control", id = "Estado" })
+                </div>
+                <div class="form-group col-md-12">
+                    @if (TempData["sucesso"] != null)
+                    {
+                        <div class="alert alert-info" role="alert">
+                            @TempData["sucesso"]
+                        </div>
+                    }
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/admin-aluno/listar" class="btn btn-warning">Voltar</a>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Disciplina
+@{
+    ViewData["Title"] = "Cadastrar dados do disciplina";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Cadastrar dados do disciplina</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+
+        <form method="post" action="/admin-disciplina/cadastrar">
+            <div class="form-row">
+                @Html.HiddenFor(x => x.IdCurso)
+
+                <div class="form-group col-md-8">
+                    <label for="">Nome</label>
+                    @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome" })
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Carga Horária</label>
+                    @Html.TextBoxFor(x => x.CargaHoraria, new { @class = "form-control", @type = "number", id = "CargaHoraria" })
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="">Descrição</label>
+                    @Html.TextAreaFor(x => x.Descricao, new { @class = "form-control", @rows = 5, id = "Descricao" })
+                </div>
+
+                <div class="form-group col-md-12">
+                    @if (TempData["sucesso"] != null)
+                    {
+                        <div class="alert alert-info" role="alert">
+                            @TempData["sucesso"]
+                        </div>
+                    }
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/admin-disciplina/listar" class="btn btn-warning">Voltar</a>
+        </form>
+    </div>
+</div>
+

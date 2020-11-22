@@ -1,0 +1,43 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Disciplina
+@{
+    ViewData["Title"] = "Atualizar dados da disciplina";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Atualizar dados da disciplina</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+
+        <form method="post" action="/admin-disciplina/atualizar">
+            <div class="form-row">
+                @Html.HiddenFor(x => x.Id, new { id = "Id" })
+                @Html.HiddenFor(x => x.IdCurso, new { id = "IdCurso" })
+
+                <div class="form-group col-md-6">
+                    <label for="">Nome</label>
+                    @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Carga Horária</label>
+                    @Html.TextBoxFor(x => x.CargaHoraria, new { @class = "form-control", id = "CargaHoraria", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="">Curso</label>
+                    @Html.TextBoxFor(x => x.IdCurso, new { @class = "form-control", id = "IdCurso", @readonly = "readonly" })
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="">Descrição</label>
+                    @Html.TextAreaFor(x => x.Descricao, new { @class = "form-control", @rows = 5, id = "Descricao", @readonly = "readonly" })
+                </div>
+
+            </div>
+            <a href="/admin-disciplina/listar" class="btn btn-warning">Voltar</a>
+        </form>
+    </div>
+</div>
+

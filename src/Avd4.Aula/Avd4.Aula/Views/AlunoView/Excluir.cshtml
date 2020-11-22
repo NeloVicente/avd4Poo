@@ -1,0 +1,35 @@
+﻿@using Avd4.Aula.Domain.Entidades
+@model Aluno
+@{
+    ViewData["Title"] = "Excluir aluno";
+}
+
+<div class="row mt-3 mb-3">
+    <div class="col-12">
+        <fieldset>
+            <legend>Excluir de alunos</legend>
+        </fieldset>
+        <hr />
+    </div>
+    <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Excluir aluno</h4>
+            <p>Tem certeza que deseja excluir este aluno?</p>
+            <hr>
+
+            <form method="post" action="/admin-aluno/excluir/@Model.Id">
+                <button type="submit" class="btn btn-danger">Confirmar exclusão</button>
+                <a href="/admin-aluno/listar" class="btn btn-warning">Voltar para mimha lista de alunos</a>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        @if (TempData["sucesso"] != null)
+        {
+            <div class="alert alert-info" role="alert">
+                @TempData["sucesso"]
+            </div>
+        }
+    </div>
+</div>
