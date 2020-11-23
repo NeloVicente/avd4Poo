@@ -49,7 +49,27 @@ namespace Avd4.Aula.Controllers
         [HttpGet, Route("cadastrar/{idAluno}")]
         public IActionResult Cadastrar(int idAluno)
         {
-            return View(new Inscricao { IdAluno = idAluno });
+            Inscricao inscricao = new Inscricao { IdAluno = idAluno };
+
+            // Obter lista de cursos da api
+            var client = new RestClient($"{UrlAPI}/curso/listar");
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            List<Curso> retornoCurso = JsonConvert.DeserializeObject<List<Curso>>(response.Content);
+            ViewBag.Cursos = retornoCurso.ToList();
+
+            // Obter lista de cursos da api
+            client = new RestClient($"{UrlAPI}/aluno/obter/{idAluno}");
+            request = new RestRequest(Method.GET);
+            response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            Aluno aluno = JsonConvert.DeserializeObject<Aluno>(response.Content);
+            inscricao.Alunos = aluno;
+
+            return View(inscricao);
         }
 
         [HttpPost, Route("cadastrar")]
@@ -62,6 +82,15 @@ namespace Avd4.Aula.Controllers
             IRestResponse response = client.Execute(request);
 
             TempData["sucesso"] = response.Content;
+
+            // Obter lista de cursos da api
+            client = new RestClient($"{UrlAPI}/curso/listar");
+            request = new RestRequest(Method.GET);
+            response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            List<Curso> retornoCurso = JsonConvert.DeserializeObject<List<Curso>>(response.Content);
+            ViewBag.Cursos = retornoCurso.ToList();
 
             return View(inscricao);
         }
@@ -78,6 +107,15 @@ namespace Avd4.Aula.Controllers
             // Fazer p parse do json para uma lista
             Inscricao retorno = JsonConvert.DeserializeObject<Inscricao>(response.Content);
 
+            // Obter lista de cursos da api
+            client = new RestClient($"{UrlAPI}/curso/listar");
+            request = new RestRequest(Method.GET);
+            response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            List<Curso> retornoCurso = JsonConvert.DeserializeObject<List<Curso>>(response.Content);
+            ViewBag.Cursos = retornoCurso.ToList();
+
             // Enviar a lista para a view, para ser carregada na tela
             return View(retorno);
         }
@@ -92,6 +130,15 @@ namespace Avd4.Aula.Controllers
             IRestResponse response = client.Execute(request);
 
             TempData["sucesso"] = response.Content;
+
+            // Obter lista de cursos da api
+            client = new RestClient($"{UrlAPI}/curso/listar");
+            request = new RestRequest(Method.GET);
+            response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            List<Curso> retornoCurso = JsonConvert.DeserializeObject<List<Curso>>(response.Content);
+            ViewBag.Cursos = retornoCurso.ToList();
 
             return View(inscricao);
         }
@@ -108,6 +155,15 @@ namespace Avd4.Aula.Controllers
             // Fazer p parse do json para uma lista
             Inscricao retorno = JsonConvert.DeserializeObject<Inscricao>(response.Content);
 
+            // Obter lista de cursos da api
+            client = new RestClient($"{UrlAPI}/curso/listar");
+            request = new RestRequest(Method.GET);
+            response = client.Execute(request);
+
+            // Fazer p parse do json para uma lista
+            List<Curso> retornoCurso = JsonConvert.DeserializeObject<List<Curso>>(response.Content);
+            ViewBag.Cursos = retornoCurso.ToList();
+        
             // Enviar a lista para a view, para ser carregada na tela
             return View(retorno);
         }

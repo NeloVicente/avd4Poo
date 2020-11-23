@@ -19,14 +19,39 @@
                 @Html.HiddenFor(x => x.IdAluno, new { id = "IdAluno" })
 
                 <div class="form-group col-md-4">
+                    <label for="">Aluno</label>
+                    @Html.TextBoxFor(x => x.Alunos.Nome, new { @class = "form-control", id = "Nome", @readonly = "readonly" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="">E-mail</label>
+                    @Html.TextBoxFor(x => x.Alunos.Email, new { @class = "form-control", id = "Email", @readonly = "readonly" })
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="">Matricula</label>
+                    @Html.TextBoxFor(x => x.Alunos.Matricula, new { @class = "form-control", id = "Matricula", @readonly = "readonly" })
+                </div>
+
+                <div class="form-group col-md-3">
                     <label for="">Status</label>
                     @Html.TextBoxFor(x => x.Status, new { @class = "form-control", id = "Status" })
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
+                    <label for="">Selecione o curso</label>
+                    <select data-val="@Model.IdCurso" class="form-control" id="IdCurso" name="IdCurso" asp-for="@Model.IdCurso">
+                        <option value="">Selecione o curso</option>
+                        @foreach (var item in (List<Curso>)ViewBag.Cursos)
+                        {
+                            <option value="@item.Id">@item.Nome</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
                     <label for="">Data de início</label>
                     @Html.TextBoxFor(x => x.DataInicio, new { @class = "form-control", placeholder = "00/00/0000", id = "DataInicio" })
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label for="">Data de conclusão</label>
                     @Html.TextBoxFor(x => x.DataConclusao, new { @class = "form-control", placeholder = "00/00/0000", id = "DataConclusao" })
                 </div>

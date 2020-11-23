@@ -55,7 +55,7 @@ namespace Avd4.Aula.DataSql.Repositorio.Repositorio
                     command.Parameters.Add(new SqlParameter { ParameterName = "@Nome", Value = disciplina.Nome, SqlDbType = SqlDbType.VarChar });
                     command.Parameters.Add(new SqlParameter { ParameterName = "@Descricao", Value = disciplina.Descricao, SqlDbType = SqlDbType.VarChar });
                     command.Parameters.Add(new SqlParameter { ParameterName = "@CargaHoraria", Value = disciplina.CargaHoraria, SqlDbType = SqlDbType.Int });
-                
+
                     // tipo de execusão
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -138,7 +138,7 @@ namespace Avd4.Aula.DataSql.Repositorio.Repositorio
                             retorno.Add(new Disciplina
                             {
                                 Id = (dataReader["Id"] == null) ? 0 : Convert.ToInt32(dataReader["Id"]),
-                                CargaHoraria = (dataReader["CargaHoraria"] == null) ? 0 : Convert.ToInt32(dataReader["CargaHoraria"]), 
+                                CargaHoraria = (dataReader["CargaHoraria"] == null) ? 0 : Convert.ToInt32(dataReader["CargaHoraria"]),
                                 Nome = (dataReader["Nome"] == null) ? null : dataReader["Nome"].ToString(),
                                 Descricao = (dataReader["Descricao"] == null) ? null : dataReader["Descricao"].ToString(),
                                 IdCurso = (dataReader["IdCurso"] == null) ? 0 : Convert.ToInt32(dataReader["IdCurso"])
@@ -150,6 +150,47 @@ namespace Avd4.Aula.DataSql.Repositorio.Repositorio
                     connection.Close();
                 }
             }
+
+            // iniciar a criação da conexão com o banco de dados
+            using (SqlConnection connection = new SqlConnection(_conexaoBancoDeDados))
+            {
+                // abrir conexão com o banco
+                connection.Open();
+
+                foreach (var item in retorno)
+                {
+                    // procedure para salvar o aluno
+                    string sql = "uspObterCurso";
+
+                    // inicia o comando para salvar os dados
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter { ParameterName = "@Id", Value = item.IdCurso, SqlDbType = SqlDbType.Int });
+
+                        // tipo de execusão
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // faz busca no banco 
+                        using (SqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            // ler resultado e popula objeto retorno com os dados do aluno
+                            while (dataReader.Read())
+                            {
+                                item.Cursos = new Curso
+                                {
+                                    Id = (dataReader["Id"] == null) ? 0 : Convert.ToInt32(dataReader["Id"]),
+                                    Nome = (dataReader["Nome"] == null) ? null : dataReader["Nome"].ToString(),
+                                    Descricao = (dataReader["Descricao"] == null) ? null : dataReader["Descricao"].ToString()
+                                };
+                            }
+                        }
+                    }
+                }
+
+                // fecha a conexão
+                connection.Close();
+            }
+
             return retorno;
         }
 
@@ -194,6 +235,43 @@ namespace Avd4.Aula.DataSql.Repositorio.Repositorio
                     // fecha a conexão
                     connection.Close();
                 }
+            }
+
+            // iniciar a criação da conexão com o banco de dados
+            using (SqlConnection connection = new SqlConnection(_conexaoBancoDeDados))
+            {
+                // procedure para salvar o aluno
+                string sql = "uspObterCurso";
+
+                // inicia o comando para salvar os dados
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.Add(new SqlParameter { ParameterName = "@Id", Value = retorno.IdCurso, SqlDbType = SqlDbType.Int });
+
+                    // tipo de execusão
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // abrir conexão com o banco
+                    connection.Open();
+
+                    // faz busca no banco 
+                    using (SqlDataReader dataReader = command.ExecuteReader())
+                    {
+                        // ler resultado e popula objeto retorno com os dados do aluno
+                        while (dataReader.Read())
+                        {
+                            retorno.Cursos = new Curso
+                            {
+                                Id = (dataReader["Id"] == null) ? 0 : Convert.ToInt32(dataReader["Id"]),
+                                Nome = (dataReader["Nome"] == null) ? null : dataReader["Nome"].ToString(),
+                                Descricao = (dataReader["Descricao"] == null) ? null : dataReader["Descricao"].ToString()
+                            };
+                        }
+                    }
+                }
+
+                // fecha a conexão
+                connection.Close();
             }
 
             return retorno;

@@ -18,7 +18,7 @@
                 @Html.HiddenFor(x => x.Id, new { id = "Id" })
                 @Html.HiddenFor(x => x.IdCurso, new { id = "IdCurso" })
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="">Nome</label>
                     @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome", @readonly = "readonly" })
                 </div>
@@ -26,9 +26,9 @@
                     <label for="">Carga Horária</label>
                     @Html.TextBoxFor(x => x.CargaHoraria, new { @class = "form-control", id = "CargaHoraria", @readonly = "readonly" })
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-4">
                     <label for="">Curso</label>
-                    @Html.TextBoxFor(x => x.IdCurso, new { @class = "form-control", id = "IdCurso", @readonly = "readonly" })
+                    @Html.TextBoxFor(x => x.Cursos.Nome, new { @class = "form-control", id = "CursoNome", @readonly = "readonly" })
                 </div>
                 <div class="form-group col-md-12">
                     <label for="">Descrição</label>

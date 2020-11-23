@@ -6,6 +6,12 @@ namespace Avd4.Aula.Domain.Entidades
 {
     public class Inscricao
     {
+        public Inscricao()
+        {
+            Alunos = new Aluno();
+            Cursos = new Curso();
+        }
+
         public int Id { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime? DataConclusao { get; set; }
@@ -13,6 +19,9 @@ namespace Avd4.Aula.Domain.Entidades
 
         public int IdAluno { get; set; }
         public Aluno Alunos { get; set; }
+
+        public int IdCurso { get; set; }
+        public Curso Cursos { get; set; }
 
         public ICollection<InscricaoDisciplina> Inscricoes { get; set; }
 

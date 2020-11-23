@@ -16,7 +16,11 @@
             <thead>
                 <tr>
                     <th>Ações</th>
+                    <th>Aluno</th>
+                    <th>Matricula</th>
+                    <th>Curso</th>
                     <th>Status</th>
+                    <th>Duração do curso</th>
                     <th>Data de início</th>
                     <th>Data de conclusão</th>
                 </tr>
@@ -30,7 +34,11 @@
                             <a href="/admin-inscricao/excluir/@item.Id" class="btn btn-danger btn-sm mt-2">Excluir</a>
                             <a href="/admin-inscricao/obter/@item.Id" class="btn btn-info btn-sm mt-2">Detalhe</a>
                         </td>
+                        <td>@item.Alunos.Nome</td>
+                        <td>@item.Alunos.Matricula</td>
+                        <td>@item.Cursos.Nome</td>
                         <td>@item.Status</td>
+                        <td>@((item.DataConclusao.Value - item.DataInicio).TotalDays) <i>(em dias)</i></td>
                         <td>@item.DataInicio.ToString("dd/MM/yyyy")</td>
                         <td>@item.DataConclusao?.ToString("dd/MM/yyyy")</td>
                     </tr>
@@ -39,7 +47,11 @@
             <tfoot>
                 <tr>
                     <th>Ações</th>
+                    <th>Aluno</th>
+                    <th>Matricula</th>
+                    <th>Curso</th>
                     <th>Status</th>
+                    <th>Duração do curso</th>
                     <th>Data de início</th>
                     <th>Data de conclusão</th>
                 </tr>

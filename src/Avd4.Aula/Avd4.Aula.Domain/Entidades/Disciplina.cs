@@ -6,6 +6,11 @@ namespace Avd4.Aula.Domain.Entidades
 {
     public class Disciplina
     {
+        public Disciplina()
+        {
+            Cursos = new Curso();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public int CargaHoraria { get; set; }
