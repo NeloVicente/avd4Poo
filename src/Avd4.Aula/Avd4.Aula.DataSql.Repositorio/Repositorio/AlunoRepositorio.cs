@@ -49,6 +49,7 @@ namespace Avd4.Aula.DataSql.Repositorio.Repositorio
 
         public void Atualizar(Aluno aluno)
         {
+            // ADO.NET
             // iniciar a criação da conexão com o banco de dados
             using (SqlConnection connection = new SqlConnection(_conexaoBancoDeDados))
             {
